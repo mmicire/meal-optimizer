@@ -13,10 +13,10 @@ function displayMealSelection(meals) {
     const container = document.getElementById('mealSelection');
     container.innerHTML = '';
     meals.forEach((meal, index) => {
-        container.innerHTML += \`
-            <input type="checkbox" id="meal_\${index}" data-index="\${index}">
-            <label for="meal_\${index}">\${meal.name} (Carbs: \${meal.carbs}, Fat: \${meal.fat}, Protein: \${meal.protein})</label><br>
-        \`;
+        container.innerHTML += `
+            <input type="checkbox" id="meal_${index}" data-index="${index}">
+            <label for="meal_${index}">${meal.name} (Carbs: ${meal.carbs}, Fat: ${meal.fat}, Protein: ${meal.protein})</label><br>
+        `;
     });
 }
 
@@ -83,8 +83,11 @@ function displayResult(plan, targetCarbs, targetFat, targetProtein) {
         return;
     }
 
-    output.innerHTML = '<ul>' + plan.combo.map(meal => \`<li>\${meal.name} (Carbs: \${meal.carbs}, Fat: \${meal.fat}, Protein: \${meal.protein})</li>\`).join('') + '</ul>';
-    output.innerHTML += \`<p><strong>Total Carbs:</strong> \${plan.totalCarbs}g (Target: \${targetCarbs}g)</p>\`;
-    output.innerHTML += \`<p><strong>Total Fat:</strong> \${plan.totalFat}g (Target: \${targetFat}g)</p>\`;
-    output.innerHTML += \`<p><strong>Total Protein:</strong> \${plan.totalProtein}g (Target: \${targetProtein}g)</p>\`;
+    output.innerHTML = '<ul>' + plan.combo.map(meal => `
+        <li>${meal.name} (Carbs: ${meal.carbs}, Fat: ${meal.fat}, Protein: ${meal.protein})</li>
+    `).join('') + '</ul>';
+
+    output.innerHTML += `<p><strong>Total Carbs:</strong> ${plan.totalCarbs}g (Target: ${targetCarbs}g)</p>`;
+    output.innerHTML += `<p><strong>Total Fat:</strong> ${plan.totalFat}g (Target: ${targetFat}g)</p>`;
+    output.innerHTML += `<p><strong>Total Protein:</strong> ${plan.totalProtein}g (Target: ${targetProtein}g)</p>`;
 }
