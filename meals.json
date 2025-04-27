@@ -1,0 +1,7 @@
+[
+    {"name": "Chicken Stir Fry", "carbs": 30, "fat": 10, "protein": 35},
+    {"name": "Beef Burger", "carbs": 20, "fat": 25, "protein": 30},
+    {"name": "Vegan Bowl", "carbs": 40, "fat": 15, "protein": 20},
+    {"name": "Salmon Plate", "carbs": 10, "fat": 20, "protein": 40},
+    {"name": "Turkey Wrap", "carbs": 35, "fat": 8, "protein": 25}
+]
